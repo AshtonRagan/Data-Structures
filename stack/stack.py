@@ -30,3 +30,6 @@ class Stack:
             return self.storage.pop(len(self.storage)-1)
         else:
             return None
+
+    def sayhi(self):
+        return print("HELLO!!")
