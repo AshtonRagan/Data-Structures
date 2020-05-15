@@ -193,17 +193,17 @@ class DoublyLinkedList:
             target = node
         cur = self.head
         if cur.value == target:
+            self.head.delete()
             self.head = cur.next
+
             # self.head.prev = None
             self.length -= 1
-            cur.delete()
-            return
+            # cur.delete()
+
         if self.tail.value == target:
+            self.tail.delete()
             self.tail = self.tail.prev
-            self.tail.next.delete()
-            self.tail.next = None
             self.length -= 1
-            return
 
         while cur.next != None:
             if cur.value == target:
@@ -262,12 +262,12 @@ class DoublyLinkedList:
 
 a = DoublyLinkedList()
 print(a)
-# a.add_to_tail(9)
+a.add_to_tail(9)
 # a.add_to_tail(8)
 # a.add_to_tail(7)
-# a.printList()
+a.printList()
 print("-----")
-a.remove_from_tail()
+a.delete(a.tail)
 a.printList()
 
 # a.add_to_head(5)
